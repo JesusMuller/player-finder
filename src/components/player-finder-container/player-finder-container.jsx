@@ -1,7 +1,8 @@
 import React from 'react';
+import SectionTitle from '../section-title';
 
 const PlayerFinderContainer = () => (
-    <div>player container wrapper</div>
+    <SectionTitle textToShow="Football Player Finder"/>
 );
 
 export default PlayerFinderContainer;
