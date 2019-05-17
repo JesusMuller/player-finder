@@ -1,7 +1,10 @@
 import React from 'react';
+import './search-form.scss';
 
 const SearchForm = () => (
-    <div>hola soy el search form</div>
+    <form>
+        <input type="text" />
+    </form>
 );
 
 export default SearchForm;
