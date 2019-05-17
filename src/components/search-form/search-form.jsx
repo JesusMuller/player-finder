@@ -1,9 +1,10 @@
 import React from 'react';
+import TextInput from '../text-input';
 import './search-form.scss';
 
 const SearchForm = () => (
     <form>
-        <input type="text" />
+        <TextInput placeHolder="Player Name"/>
     </form>
 );
 
