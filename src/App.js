@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
+import PlayerFinderContainer from './components/player-finder-container';
 
 function App() {
   return (
     <Fragment>
-      <div>first component</div>
+      <PlayerFinderContainer />
     </Fragment>
   );
 }
