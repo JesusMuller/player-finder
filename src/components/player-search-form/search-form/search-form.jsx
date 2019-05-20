@@ -1,4 +1,5 @@
 import React from 'react';
+import { func, string} from 'prop-types';
 import { positions } from '../../../constants'
 import TextInput from '../../text-input';
 import ComboBox from '../../combo-box';
@@ -21,5 +22,11 @@ const SearchForm = ({ onSubmitHandler, playerNameError, playerAgeError }) => (
         </div>
     </form>
 );
+
+SearchForm.propTypes = {
+    onSubmitHandler: func.isRequired,
+    playerNameError: string,
+    playerAgeError: string
+};
 
 export default SearchForm;
