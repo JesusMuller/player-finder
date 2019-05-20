@@ -3,7 +3,7 @@ import { string } from 'prop-types';
 import { textInput } from './text-input.module.scss';
 
 //errorMessage is an optinal string to show a validation error
-//it render a conditional element
+//it renders a conditional element
 const TextInput = ({ placeHolder, errorMessage }) => {
     return (
         <Fragment>
