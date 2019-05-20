@@ -5,14 +5,20 @@ import ComboBox from '../../combo-box';
 import SubmitButton from '../../submit-button';
 import './search-form.scss';
 
-const SearchForm = ({ onSubmitHandler }) => (
+const SearchForm = ({ onSubmitHandler, playerNameError, playerAgeError }) => (
     <form onSubmit={onSubmitHandler}>
-        <div className="input-container"><TextInput placeHolder="Player Name" /></div>
-        <div className="input-container">
+        <div className="input-container" id="player-name">
+            <TextInput placeHolder="Player Name" errorMessage={playerNameError} />
+        </div>
+        <div className="input-container" id="player-position">
             <ComboBox optionsInitializer={"Position"} options={positions} />
         </div>
-        <div className="input-container"><TextInput placeHolder="Age" /></div>
-        <div className="input-container"><SubmitButton buttonText="Search" /></div>
+        <div className="input-container" id="player-age">
+            <TextInput placeHolder="Age" errorMessage={playerAgeError} />
+        </div>
+        <div className="input-container">
+            <SubmitButton buttonText="Search" />
+        </div>
     </form>
 );
 
