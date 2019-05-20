@@ -1,3 +1,14 @@
 form {
     padding: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    & .input-container {
+       flex-grow: 1;
+       padding-bottom: 10px;
+       
+       & input:not([type='submit']), select {
+           width: 90%;
+       }
+    }
 }

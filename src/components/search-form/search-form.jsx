@@ -7,10 +7,12 @@ import './search-form.scss';
 
 const SearchForm = () => (
     <form>
-        <TextInput placeHolder="Player Name" />
-        <ComboBox optionsInitializer={"Position"} options={positions} />
-        <TextInput placeHolder="Age" />
-        <SubmitButton buttonText="Search"/>
+        <div className="input-container"><TextInput placeHolder="Player Name" /></div>
+        <div className="input-container">
+            <ComboBox optionsInitializer={"Position"} options={positions} />
+        </div>
+        <div className="input-container"><TextInput placeHolder="Age" /></div>
+        <div className="input-container"><SubmitButton buttonText="Search" /></div>
     </form>
 );
 
