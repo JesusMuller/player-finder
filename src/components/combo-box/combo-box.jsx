@@ -1,6 +1,6 @@
 import React from 'react';
 import { string, arrayOf } from 'prop-types';
-import './combo-box.scss';
+import { searchFormComboBox } from './combo-box.module.scss';
 
 // optionsInitializer is the initial state of select
 // and an option to reset the selecte value
@@ -10,7 +10,7 @@ const ComboBox = ({ optionsInitializer, options }) => {
     ));
 
     return (
-        <select>
+        <select className={searchFormComboBox}>
             <option value="">{optionsInitializer}</option>
             {comboOptions}
         </select>

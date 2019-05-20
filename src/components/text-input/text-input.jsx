@@ -1,9 +1,9 @@
 import React from 'react';
 import { string } from 'prop-types';
-import './text-input.scss';
+import { textInput } from './text-input.module.scss';
 
 const TextInput = ({ placeHolder }) => (
-    <input type="text" placeholder={placeHolder} />
+    <input className={textInput} type="text" placeholder={placeHolder} />
 );
 
 TextInput.propTypes = {
