@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
-import { getAllPlayers } from '../../actions';
+import { loadPlayers } from '../../actions';
+import { getPlayers } from '../../selectors';
 import PlayerInformationTable from './player-information-table';
 
 const mapStateToProps = state => (
-    { players: state.players }
+    { players: getPlayers(state.players, state.filters) }
 );
 
 const mapDispatchToProps = dispatch => (
-    { loadPlayers: () => dispatch(getAllPlayers())}
+    { loadPlayers: () => dispatch(loadPlayers())}
 );
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerInformationTable);

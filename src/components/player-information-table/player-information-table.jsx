@@ -7,7 +7,6 @@ import './player-information-table.scss';
     2 we get 0 results from remote server or filtering selector
     3 we are fetching data from remote server
 */
-
 class PlayerInformationTable extends Component {
     componentWillMount() {
         this.props.loadPlayers();

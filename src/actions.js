@@ -1,4 +1,5 @@
-const addPlayersAge = players => {
+//this is function helper to add an age key to players
+function addPlayersAge(players) {
     const auxPlayers = players.map(player => {
         const birthDay = new Date(player.dateOfBirth);
         const today = new Date();
@@ -6,19 +7,26 @@ const addPlayersAge = players => {
         return { ...player, 'age': age };
     });
     return auxPlayers;
-}
+};
 
-const getAllPlayers = () => {
+const loadPlayers = () => {
     return dispatch => {
         fetch("https://football-players-b31f2.firebaseio.com/players.json")
             .then(response => response.json())
             .then(data => {
                 dispatch({
-                    type: "GET_ALL_PLAYERS",
+                    type: "LOAD_PLAYERS",
                     players: addPlayersAge(data)
                 })
             });
     }
 }
 
-export { getAllPlayers }
+const filterPlayers = (filters) => {
+    return {
+        type: "FILTER_PLAYERS",
+        filters: filters
+    }
+}
+
+export { loadPlayers, filterPlayers }
