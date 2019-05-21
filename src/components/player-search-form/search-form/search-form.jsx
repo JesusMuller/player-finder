@@ -1,5 +1,5 @@
 import React from 'react';
-import { func, string} from 'prop-types';
+import { func, string } from 'prop-types';
 import { positions } from '../../../constants'
 import TextInput from '../../text-input';
 import ComboBox from '../../combo-box';
@@ -12,7 +12,8 @@ const SearchForm = ({ onSubmitHandler, playerNameError, playerAgeError }) => (
             <TextInput placeHolder="Player Name" errorMessage={playerNameError} />
         </div>
         <div className="input-container" id="player-position">
-            <ComboBox optionsInitializer={"Position"} options={positions} />
+            <ComboBox optionsInitializer={"Position"} options={positions}
+                onSubmitHandler={onSubmitHandler} />
         </div>
         <div className="input-container" id="player-age">
             <TextInput placeHolder="Age" errorMessage={playerAgeError} />
