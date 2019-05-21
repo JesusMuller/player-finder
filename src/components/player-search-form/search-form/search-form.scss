@@ -3,20 +3,29 @@ form {
     display: flex;
     flex-wrap: wrap;
 
-    & .input-container {
-       flex-grow: 1;
-       padding-bottom: 10px;
-       > span {
-           display: block;
-           color: #ff0000;
-           font-size: .75em;
-       }
-       > span::before {
-           content: '* '
-       }
+    @media(max-width: 660px) {
+        display: block;
+    }
 
-       & input:not([type='submit']), select {
-           width: 90%;
-       }
+    & .input-container {
+        flex-grow: 1;
+        padding-bottom: 10px;
+
+        >span {
+            display: block;
+            color: #ff0000;
+            font-size: .75em;
+        }
+
+        >span::before {
+            content: '* '
+        }
+
+        & input:not([type='submit']), select {
+            width: 90%;
+            @media(max-width: 660px) {
+                width: 100%;
+            }
+        }
     }
 }
