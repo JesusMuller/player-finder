@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SectionTitle /> Should render an <h1> with a text inside 1`] = `
+exports[`<SectionTitle /> Should match snapshot 1`] = `
 <h1>
   dummy title
 </h1>

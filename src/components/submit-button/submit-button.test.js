@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SectionTile from './section-title';
+import SubmitButton from './submit-button';
 
-describe('<SectionTitle />', () => {
+describe('<SubmitButton />', () => {
     it('Should match snapshot', () => {
-        const wrapper = shallow(<SectionTile textToShow="dummy title" />);
+        const wrapper = shallow(<SubmitButton buttonText="Search" />);
         expect(wrapper).toMatchSnapshot();
     });
 });
