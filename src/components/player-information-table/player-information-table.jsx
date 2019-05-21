@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { func } from 'prop-types';
 import { NO_RESULTS_MESSAGE, LOADING_RESULTS_MESSAGE } from '../../constants';
 import './player-information-table.scss';
 
@@ -51,5 +52,9 @@ class PlayerInformationTable extends Component {
         );
     }
 }
+
+PlayerInformationTable.propTypes = {
+    loadPlayers: func.isRequired
+};
 
 export default PlayerInformationTable;
