@@ -13,5 +13,10 @@ const positions = [
 
 const PLAYER_NAME_VALIDATION_ERROR = 'You must use only letters';
 const PLAYER_AGE_VALIDATION_ERROR = 'You must use numbers from 18 to 40';
+const NO_RESULTS_MESSAGE = 'No results were found for given filters. Please try other values';
 
-export { positions, PLAYER_NAME_VALIDATION_ERROR, PLAYER_AGE_VALIDATION_ERROR };
+export { positions,
+    PLAYER_NAME_VALIDATION_ERROR,
+    PLAYER_AGE_VALIDATION_ERROR,
+    NO_RESULTS_MESSAGE
+};

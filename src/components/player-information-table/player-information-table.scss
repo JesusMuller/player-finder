@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+        background: #9D9D9D;
+        color: #FFFFFF;
+    }
+
+    tr * {
+        padding: 1rem;
+    }
+
+    td {
+        text-align: center;
+    }
+
+    th {
+        font-weight: normal;
+    }
+
+    tbody tr:nth-child(odd) {
+        background: #E6E6E6;
+    }
+}
+
+table, th, td {
+    border: 1px solid #000000;
+}
