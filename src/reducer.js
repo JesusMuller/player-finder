@@ -1,5 +1,5 @@
 const initialState = {
-    players: []
+    players: undefined
 }
 
 const reducer = (state, action) => {
