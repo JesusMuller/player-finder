@@ -34,7 +34,7 @@ class PlayerInformationTable extends Component {
                                 <td>{player.name}</td>
                                 <td>{player.position}</td>
                                 <td>{player.nationality}</td>
-                                <td>{player.dateOfBirth}</td>
+                                <td>{player.age}</td>
                             </tr>
                         ))}
                     </tbody>
