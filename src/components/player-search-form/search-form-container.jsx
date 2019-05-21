@@ -4,7 +4,7 @@ import {
     PLAYER_AGE_VALIDATION_ERROR
 } from '../../constants';
 
-import SearchForm from './search-form/search-form';
+import SearchForm from './search-form';
 
 class SearchFormContainer extends Component {
     constructor() {

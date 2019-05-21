@@ -12,7 +12,7 @@ const SearchForm = ({ onSubmitHandler, playerNameError, playerAgeError }) => (
             <TextInput placeHolder="Player Name" errorMessage={playerNameError} />
         </div>
         <div className="input-container" id="player-position">
-            <ComboBox optionsInitializer={"Position"} options={positions}
+            <ComboBox optionsInitializer="Position" options={positions}
                 onSubmitHandler={onSubmitHandler} />
         </div>
         <div className="input-container" id="player-age">
