@@ -17,11 +17,13 @@ const NO_RESULTS_MESSAGE = "No results were found for given filters. Please try 
 const LOADING_RESULTS_MESSAGE = "Loading...";
 const HOST = "https://football-players-b31f2.firebaseio.com";
 const PLAYERS_ENDPOINT = "players.json";
+const SERVICE_FAILED = "GET PLAYERS SERVICE HAS FAILED";
 
 export { positions,
     PLAYER_NAME_VALIDATION_ERROR,
     PLAYER_AGE_VALIDATION_ERROR,
     NO_RESULTS_MESSAGE,
     LOADING_RESULTS_MESSAGE,
-    HOST, PLAYERS_ENDPOINT
+    HOST, PLAYERS_ENDPOINT,
+    SERVICE_FAILED
 };

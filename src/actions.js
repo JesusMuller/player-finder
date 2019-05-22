@@ -1,4 +1,4 @@
-import { HOST, PLAYERS_ENDPOINT } from './constants';
+import { HOST, SERVICE_FAILED, PLAYERS_ENDPOINT } from './constants';
 import { LOAD_PLAYERS, FILTER_PLAYERS } from './actionTypes';
 
 const loadPlayers = () => {
@@ -11,7 +11,7 @@ const loadPlayers = () => {
                     players: addPlayersAge(data)
                 })
             }).catch(execption =>
-                console.log('Service has failed' + execption)
+                alert(`${SERVICE_FAILED} ${execption}`)
             );
     }
 }
