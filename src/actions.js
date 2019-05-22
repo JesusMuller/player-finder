@@ -3,14 +3,16 @@ import { LOAD_PLAYERS, FILTER_PLAYERS } from './actionTypes';
 
 const loadPlayers = () => {
     return dispatch => {
-        fetch(`${HOST}/${PLAYERS_ENDPOINT}`)
+        return fetch(`${HOST}/${PLAYERS_ENDPOINT}`)
             .then(response => response.json())
             .then(data => {
                 dispatch({
                     type: LOAD_PLAYERS,
                     players: addPlayersAge(data)
                 })
-            });
+            }).catch(execption =>
+                console.log('Service has failed' + execption)
+            );
     }
 }
 
@@ -25,7 +27,8 @@ export { loadPlayers, filterPlayers }
 
 // This is function helper to add an age key to players
 function addPlayersAge(players) {
-    const auxPlayers = players.map(player => {
+    let auxPlayers = [];
+    auxPlayers = players.map(player => {
         const birthDay = new Date(player.dateOfBirth);
         const today = new Date();
         const age = today.getFullYear() - birthDay.getFullYear();
