@@ -1,5 +1,6 @@
 import { HOST, SERVICE_FAILED, PLAYERS_ENDPOINT } from './constants';
 import { LOAD_PLAYERS, FILTER_PLAYERS } from './actionTypes';
+import { addPlayersAge } from './helpers/addPlayersAge';
 
 const loadPlayers = () => {
     return dispatch => {
@@ -23,16 +24,4 @@ const filterPlayers = (filters) => {
     }
 }
 
-export { loadPlayers, filterPlayers }
-
-// This is function helper to add an age key to players
-function addPlayersAge(players) {
-    let auxPlayers = [];
-    auxPlayers = players.map(player => {
-        const birthDay = new Date(player.dateOfBirth);
-        const today = new Date();
-        const age = today.getFullYear() - birthDay.getFullYear();
-        return { ...player, 'age': age };
-    });
-    return auxPlayers;
-};
+export { loadPlayers, filterPlayers };
