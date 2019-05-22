@@ -5,7 +5,7 @@ const initialState = {
     filters: undefined
 }
 
-const reducer = (state, action) => {
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD_PLAYERS:
             return {
@@ -22,4 +22,4 @@ const reducer = (state, action) => {
     }
 };
 
-export { reducer, initialState };
+export { reducer };
