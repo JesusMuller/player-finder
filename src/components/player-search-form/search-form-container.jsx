@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { func } from 'prop-types';
 import {
     PLAYER_NAME_VALIDATION_ERROR,
     PLAYER_AGE_VALIDATION_ERROR
@@ -75,6 +76,10 @@ class SearchFormContainer extends Component {
             />
         );
     }
+};
+
+SearchFormContainer.propTypes = {
+    filterPlayers: func.isRequired
 };
 
 export default SearchFormContainer;
