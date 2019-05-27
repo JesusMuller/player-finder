@@ -1,6 +1,6 @@
 import React from 'react';
 import { string } from 'prop-types';
-import { submitButton } from './submit-button.module.scss';
+import { submitButton } from './SubmitButton.module.scss';
 
 const SubmitButton = ({ buttonText }) => (
     <input className={submitButton} type="submit" value={buttonText} />

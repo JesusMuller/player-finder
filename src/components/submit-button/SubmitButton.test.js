@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SubmitButton from './submit-button';
+import SubmitButton from './SubmitButton';
 
 describe('<SubmitButton />', () => {
     it('Should match snapshot', () => {
