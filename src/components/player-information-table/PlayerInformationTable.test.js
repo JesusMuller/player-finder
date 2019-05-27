@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import PlayerInformationTable from './player-information-table';
+import PlayerInformationTable from './PlayerInformationTable';
 
 describe('<PlayerInformationTable />', () => {
     it('Should render an LOADING <span> while service is fetching', () => {

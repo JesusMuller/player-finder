@@ -1,13 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { func } from 'prop-types';
 import { NO_RESULTS_MESSAGE, LOADING_RESULTS_MESSAGE } from '../../constants';
-import './player-information-table.scss';
+import './PlayerInformationTable.scss';
 
-/*  Conditional rendering in order
-    1 we get results from store
-    2 we get 0 results from remote server or filtering selector
-    3 we are fetching data from remote server
-*/
 class PlayerInformationTable extends Component {
     componentWillMount() {
         this.props.loadPlayers();
