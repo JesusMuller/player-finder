@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SearchForm from './search-form';
+import SearchForm from './SearchForm';
 
 const setProps = {
     onSubmitHandler: jest.fn()

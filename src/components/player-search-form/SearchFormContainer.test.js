@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import SearchFormContainer from './search-form-container';
+import SearchFormContainer from './SearchFormContainer';
 
 const setProps = {
     filterPlayers: jest.fn()

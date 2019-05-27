@@ -4,7 +4,7 @@ import { positions } from '../../../constants'
 import TextInput from '../../text-input';
 import ComboBox from '../../combo-box';
 import SubmitButton from '../../submit-button';
-import './search-form.scss';
+import './SearchForm.scss';
 
 const SearchForm = ({ onSubmitHandler, playerNameError, playerAgeError }) => (
     <form onSubmit={onSubmitHandler}>
