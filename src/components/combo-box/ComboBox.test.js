@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ComboBox from './combo-box';
+import ComboBox from './ComboBox';
 
 let setProps = {
     optionsInitializer: 'position',

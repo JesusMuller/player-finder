@@ -1,9 +1,7 @@
 import React from 'react';
 import { string, arrayOf, func } from 'prop-types';
-import { searchFormComboBox } from './combo-box.module.scss';
+import { searchFormComboBox } from './ComboBox.module.scss';
 
-// optionsInitializer is the initial state of select
-// and an option to reset the selecte value
 const ComboBox = ({ optionsInitializer, options, onSubmitHandler }) => {
     const comboOptions = options.map((option, i) => (
         <option key={option + 'i'} value={option}>{option}</option>
