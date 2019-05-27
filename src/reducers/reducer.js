@@ -1,4 +1,4 @@
-import { LOAD_PLAYERS, FILTER_PLAYERS } from './actionTypes';
+import { LOAD_PLAYERS, FILTER_PLAYERS } from '../actionTypes';
 
 const initialState = {
     players: undefined,

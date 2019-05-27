@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-import { reducer } from './reducer';
+import { reducer } from './reducers/reducer';
 
 //This logger is just to see store changes in browser console
 //discomment to launch and and to applyMiddlewarea as parameter
