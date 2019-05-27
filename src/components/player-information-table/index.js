@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { loadPlayers } from '../../actions/actions';
-import { getPlayers } from '../../selectors';
+import { getPlayers } from '../../selectors/selectors';
 import PlayerInformationTable from './PlayerInformationTable';
 
 const mapStateToProps = state => (

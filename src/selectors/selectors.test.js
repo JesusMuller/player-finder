@@ -1,5 +1,5 @@
 import { getPlayers } from './selectors';
-import mockPlayers from './mocks/mockPlayers';
+import mockPlayers from '../mocks/mockPlayers';
 
 describe('Testing only selector', () => {
     it('Should return all players if filters is undefined', () => {
