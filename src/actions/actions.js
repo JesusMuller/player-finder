@@ -1,5 +1,5 @@
-import { HOST, SERVICE_FAILED, PLAYERS_ENDPOINT } from '../constants';
-import { LOAD_PLAYERS, FILTER_PLAYERS } from '../actionTypes';
+import { HOST, SERVICE_FAILED, PLAYERS_ENDPOINT } from '../constants/constants';
+import { LOAD_PLAYERS, FILTER_PLAYERS } from '../constants/actionTypes';
 import { addPlayersAge } from '../helpers/addPlayersAge';
 
 const loadPlayers = () => {

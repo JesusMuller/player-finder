@@ -1,6 +1,6 @@
 import React from 'react';
 import { func, string } from 'prop-types';
-import { positions } from '../../../constants'
+import { positions } from '../../../constants/constants'
 import TextInput from '../../text-input';
 import ComboBox from '../../combo-box';
 import SubmitButton from '../../submit-button';

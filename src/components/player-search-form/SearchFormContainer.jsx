@@ -3,7 +3,7 @@ import { func } from 'prop-types';
 import {
     PLAYER_NAME_VALIDATION_ERROR,
     PLAYER_AGE_VALIDATION_ERROR
-} from '../../constants';
+} from '../../constants/constants';
 
 import SearchForm from './search-form';
 

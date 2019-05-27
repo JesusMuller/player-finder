@@ -2,7 +2,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
 import { loadPlayers, filterPlayers } from './actions';
-import { LOAD_PLAYERS, FILTER_PLAYERS } from '../actionTypes';
+import { LOAD_PLAYERS, FILTER_PLAYERS } from '../constants/actionTypes';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
