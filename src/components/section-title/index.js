@@ -1,1 +1,1 @@
-export { default } from './section-title';
+export { default } from './SectionTitle';

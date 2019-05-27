@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SectionTile from './section-title';
+import SectionTile from './SectionTitle';
 
 describe('<SectionTitle />', () => {
     it('Should match snapshot', () => {
