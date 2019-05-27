@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TextInput from './text-input';
+import TextInput from './TextInput';
 
 describe('<TextInput />', () => {
     it('Should render an <input>', () => {

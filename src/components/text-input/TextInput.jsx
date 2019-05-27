@@ -1,9 +1,7 @@
 import React, { Fragment } from 'react';
 import { string } from 'prop-types';
-import { textInput } from './text-input.module.scss';
+import { textInput } from './TextInput.module.scss';
 
-//errorMessage is an optinal string to show a validation error
-//it renders a conditional element
 const TextInput = ({ placeHolder, errorMessage }) => {
     return (
         <Fragment>
