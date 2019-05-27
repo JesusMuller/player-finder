@@ -1,1 +1,1 @@
-export { default } from './player-finder-container';
+export { default } from './PlayerFinderContainer';

@@ -2,7 +2,7 @@ import React from 'react';
 import SectionTitle from '../section-title';
 import SearchFormContainer from '../player-search-form';
 import PlayerInformationTable from '../player-information-table';
-import './player-finder-container.css';
+import './PlayerFinderContainer.scss';
 
 const PlayerFinderContainer = () => (
     <div className="section-container">
