@@ -1,4 +1,3 @@
-// This is a function helper to return an age given today and birthday dates
 export function calculateAge(today, birthDay) {
     const birthDayMonth = birthDay.getMonth();
     const birthDayDay = birthDay.getDate();
