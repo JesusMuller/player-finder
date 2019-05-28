@@ -75,5 +75,4 @@ describe('Testing only selector', () => {
         expect(getPlayers(mockPlayers, filters)).toEqual(expectedResponse);
     });
 
-
 });

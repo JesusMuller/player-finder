@@ -1,45 +1,22 @@
-/**
- * If anme is empty will return all
- * If name is valid will return matched players
- */
-const filterByName = (players, name) => {
-    const auxPlayers = [...players];
-    return auxPlayers.filter(player => {
-        const filterName = name.toUpperCase();
-        const playerName = player.name.toUpperCase();
-        if (name === "") {
-            return true;
-        } else if (playerName.indexOf(filterName) > -1) {
-            return true;
-        } else {
-            return false;
-        }
-    });
+const nameCondition = (playerName, nameFromFilter) => {
+    const NormalizedFilterName = nameFromFilter.toUpperCase();
+    const NormalizedPlayerName = playerName.toUpperCase();
+    return (NormalizedFilterName === "" || NormalizedPlayerName.indexOf(NormalizedFilterName) > -1) ?
+        true : false
 };
 
-/**
- * If position is empty will return all
- * If a position was selected will return matched players
- */
-const filterByPosition = (players, position) => {
-    const auxPlayers = [...players];
-    return auxPlayers.filter(player => position === "" || player.position === position);
+const positonCondition = (playerPosition, positionFromFilter) => {
+    return positionFromFilter === "" || playerPosition === positionFromFilter;
 };
 
-/**
- * If age field is empty will return all
- * If age is valid will return matched players
- */
-const filterByAge = (players, age) => {
-    const auxPlayers = [...players];
-    return auxPlayers.filter(player => age === "" || player.age === Number(age));
+const ageCondition = (playerAge, ageFromFilter) => {
+    return ageFromFilter === "" || playerAge === Number(ageFromFilter);
 };
 
 const filterPlayers = (players, filters) => {
-    const playersFiltedByName = filterByName(players, filters.name);
-    const playersFilteredByPosition = filterByPosition(playersFiltedByName, filters.position);
-    const playersFiltered = filterByAge(playersFilteredByPosition, filters.age);
-    return playersFiltered;
+    return players.filter(player => ageCondition(player.age, filters.age) &&
+        positonCondition(player.position, filters.position) &&
+        nameCondition(player.name, filters.name));
 };
 
 const getPlayers = (players, filters) => {
