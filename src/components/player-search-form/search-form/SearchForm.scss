@@ -10,6 +10,7 @@ form {
     .input-container {
         flex-grow: 1;
         padding-bottom: 10px;
+        flex-basis: 0;
 
         >span {
             display: block;
