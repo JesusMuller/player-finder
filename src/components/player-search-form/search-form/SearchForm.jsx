@@ -6,26 +6,44 @@ import ComboBox from '../../combo-box';
 import SubmitButton from '../../submit-button';
 import './SearchForm.scss';
 
-const SearchForm = ({ onSubmitHandler, playerNameError, playerAgeError }) => (
-    <form onSubmit={onSubmitHandler}>
-        <div className="input-container" id="player-name">
-            <TextInput placeHolder="Player Name" errorMessage={playerNameError} />
-        </div>
-        <div className="input-container" id="player-position">
-            <ComboBox optionsInitializer="Position" options={positions}
-                onSubmitHandler={onSubmitHandler} />
-        </div>
-        <div className="input-container" id="player-age">
-            <TextInput placeHolder="Age" errorMessage={playerAgeError} />
-        </div>
-        <div className="input-container">
-            <SubmitButton buttonText="Search" />
-        </div>
-    </form>
-);
+const SearchForm = ({ onSubmitHandler,
+    playerNameInput,
+    onNameInputChangeHandler,
+    onPositionInputChangeHandler,
+    playerAgeInput,
+    onAgeInputChangeHandler,
+    playerNameError,
+    playerAgeError }) => (
+        <form onSubmit={onSubmitHandler}>
+            <div className="input-container">
+                <TextInput placeHolder="Player Name"
+                    inputValue={playerNameInput}
+                    onChangeHandler={onNameInputChangeHandler}
+                    errorMessage={playerNameError} />
+            </div>
+            <div className="input-container">
+                <ComboBox optionsInitializer="Position" options={positions}
+                    onChangeHandler={onPositionInputChangeHandler} />
+            </div>
+            <div className="input-container">
+                <TextInput placeHolder="Age"
+                    inputValue={playerAgeInput}
+                    onChangeHandler={onAgeInputChangeHandler}
+                    errorMessage={playerAgeError} />
+            </div>
+            <div className="input-container">
+                <SubmitButton buttonText="Search" />
+            </div>
+        </form>
+    );
 
 SearchForm.propTypes = {
     onSubmitHandler: func.isRequired,
+    playerNameInput: string.isRequired,
+    onNameInputChangeHandler: func.isRequired,
+    onPositionInputChangeHandler: func.isRequired,
+    playerAgeInput: string.isRequired,
+    onAgeInputChangeHandler: func.isRequired,
     playerNameError: string,
     playerAgeError: string
 };

@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchForm /> Should match <SearchForm /> Snapshot 1`] = `
+<form
+  onSubmit={[MockFunction]}
+>
+  <div
+    className="input-container"
+  >
+    <TextInput
+      inputValue=""
+      onChangeHandler={[MockFunction]}
+      placeHolder="Player Name"
+    />
+  </div>
+  <div
+    className="input-container"
+  >
+    <ComboBox
+      onChangeHandler={[MockFunction]}
+      options={
+        Array [
+          "Attacking Midfield",
+          "Central Midfield",
+          "Centre-Back",
+          "Centre-Forward",
+          "Defensive Midfield",
+          "Keeper",
+          "Left Midfield",
+          "Left Wing",
+          "Left-Back",
+          "Right-Back",
+        ]
+      }
+      optionsInitializer="Position"
+    />
+  </div>
+  <div
+    className="input-container"
+  >
+    <TextInput
+      inputValue=""
+      onChangeHandler={[MockFunction]}
+      placeHolder="Age"
+    />
+  </div>
+  <div
+    className="input-container"
+  >
+    <SubmitButton
+      buttonText="Search"
+    />
+  </div>
+</form>
+`;

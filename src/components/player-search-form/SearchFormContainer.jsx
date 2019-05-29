@@ -10,69 +10,80 @@ import SearchForm from './search-form';
 class SearchFormContainer extends Component {
     constructor() {
         super();
-        this.onSubmitHandler = this.onSubmitHandler.bind(this);
-        this.getPlayerName = this.getPlayerName.bind(this);
-        this.getPlayerAge = this.getPlayerAge.bind(this);
         this.state = {
+            inputs: {
+                name: '',
+                position: '',
+                age: ''
+            },
             playerNameError: '',
             playerAgeError: ''
         }
     }
 
-    onSubmitHandler(e) {
+    componentDidUpdate(_prevProps, prevState) {
+        if (this.state.inputs.position !== prevState.inputs.position) {
+            this.filterResults();
+        }
+    }
+
+    onNameInputChangeHandler = e => {
+        this.setState({ inputs: { ...this.state.inputs, name: e.target.value } });
+    }
+
+    onPositionInputChangeHandler = e => {
+        this.setState({ inputs: { ...this.state.inputs, position: e.target.value } });
+    }
+
+    onAgeInputChangeHandler = e => {
+        this.setState({ inputs: { ...this.state.inputs, age: e.target.value } });
+    }
+
+    onSubmitHandler = e => {
         e.preventDefault();
-        const playerName = this.getPlayerName();
-        const playerPosition = this.getPlayerPosition();
-        const playerAge = this.getPlayerAge();
-        // if form inputs are valid will filter results
-        if (playerName !== false && playerAge !== false) {
-            this.props.filterPlayers({
-                name: playerName,
-                position: playerPosition,
-                age: playerAge
-            });
-        }
-    };
+        this.filterResults();
+    }
 
-    // Validates player name just have letters
-    // if it is valid so returns the value
-    getPlayerName() {
-        const value = document.getElementById('player-name').firstChild.value;
-        const isValid = value === '' || /^[a-zA-Z\s]*$/.test(value) ? true : false;
+    filterResults() {
+        if (this.isPlayerNameValid() && this.isPlayerAgeValid()) {
+            this.props.filterPlayers(this.state.inputs);
+        }
+    }
+
+    isPlayerNameValid = () => {
+        const { name } = this.state.inputs;
+        const isValid = name === '' || /^[a-zA-Záéíóúäëïöü\s]*$/.test(name) ? true : false;
         if (isValid) {
-            this.setState({ playerNameError: '' })
-            return value;
+            this.setState({ playerNameError: '' });
+        } else {
+            this.setState({ playerNameError: PLAYER_NAME_VALIDATION_ERROR });
         }
-        else {
-            this.setState({ playerNameError: PLAYER_NAME_VALIDATION_ERROR })
-            return false;
-        }
+        return isValid;
     }
 
-    getPlayerPosition() {
-        return document.getElementById('player-position').firstChild.value;
-    }
-
-    // Validates player age is empty or between 18 and 40
-    // if it is valid so returns the value
-    getPlayerAge() {
-        const value = document.getElementById('player-age').firstChild.value;
-        const isValid = value === '' || (value >= 18 && value <= 40) ? true : false;
+    isPlayerAgeValid() {
+        const { age } = this.state.inputs;
+        const isValid = age === '' || (17 < age && age < 41) ? true : false;
         if (isValid) {
             this.setState({ playerAgeError: '' })
-            return value;
-        }
-        else {
+        } else {
             this.setState({ playerAgeError: PLAYER_AGE_VALIDATION_ERROR })
-            return false;
         }
+        return isValid;
     }
 
     render() {
+        const { name, age } = this.state.inputs;
+        const { playerNameError, playerAgeError } = this.state;
         return (
             <SearchForm onSubmitHandler={this.onSubmitHandler}
-                playerNameError={this.state.playerNameError}
-                playerAgeError={this.state.playerAgeError}
+                playerNameInput={name}
+                onNameInputChangeHandler={this.onNameInputChangeHandler}
+                playerNameError={playerNameError}
+                onPositionInputChangeHandler={this.onPositionInputChangeHandler}
+                playerAgeInput={age}
+                onAgeInputChangeHandler={this.onAgeInputChangeHandler}
+                playerAgeError={playerAgeError}
             />
         );
     }
