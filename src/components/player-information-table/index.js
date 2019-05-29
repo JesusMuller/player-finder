@@ -7,8 +7,6 @@ const mapStateToProps = state => (
     { players: getPlayers(state.players, state.filters) }
 );
 
-const mapDispatchToProps = dispatch => (
-    { loadPlayers: () => dispatch(loadPlayers())}
-);
+const mapDispatchToProps = { loadPlayers };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerInformationTable);

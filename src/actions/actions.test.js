@@ -53,5 +53,39 @@ describe('actions', () => {
         return store.dispatch(loadPlayers()).then(() => {
             expect(store.getActions()).toEqual(expectedActions)
         })
-    })
+    });
+
+    it('creates LOAD_PLAYERS when fetching players has been done and calculate real age', () => {
+        fetchMock.getOnce('https://football-players-b31f2.firebaseio.com/players.json', {
+            body: [{
+                "contractUntil": "2022-06-30",
+                "dateOfBirth": "1993-12-31",
+                "jerseyNumber": 9,
+                "name": "Romelu Lukaku",
+                "nationality": "Belgium",
+                "position": "Centre-Forward"
+            }],
+            headers: { 'content-type': 'application/json' }
+        })
+
+        const expectedActions = [
+            {
+                type: LOAD_PLAYERS,
+                players: [{
+                    "age": 25,
+                    "contractUntil": "2022-06-30",
+                    "dateOfBirth": "1993-12-31",
+                    "jerseyNumber": 9,
+                    "name": "Romelu Lukaku",
+                    "nationality": "Belgium",
+                    "position": "Centre-Forward"
+                }]
+            }
+        ]
+        const store = mockStore({ players: [] });
+
+        return store.dispatch(loadPlayers()).then(() => {
+            expect(store.getActions()).toEqual(expectedActions)
+        })
+    });
 });

@@ -6,6 +6,10 @@ const initialState = {
 };
 
 describe('Only reducer', () => {
+    it('should return the initial state', () => {
+        expect(reducer(undefined, {})).toEqual(initialState);
+    });
+
     it('Should return initial state when action type is not registered', () => {
         expect(reducer(initialState, { type: "NO_REGISTED_ACTION" })).toEqual(initialState);
     });
