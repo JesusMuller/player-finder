@@ -5,7 +5,7 @@ import Index from './index';
 
 const mockStore = configureMockStore();
 
-describe('Dice', () => {
+describe('PlayerInformationTable connector', () => {
     let wrapper, store;
 
     const initialState = {
