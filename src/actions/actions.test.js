@@ -38,7 +38,7 @@ describe('actions', () => {
             {
                 type: LOAD_PLAYERS,
                 players: [{
-                    "age": 26,
+                    "age": 27,
                     "contractUntil": "2022-06-30",
                     "dateOfBirth": "1993-05-13",
                     "jerseyNumber": 9,
@@ -72,7 +72,7 @@ describe('actions', () => {
             {
                 type: LOAD_PLAYERS,
                 players: [{
-                    "age": 25,
+                    "age": 27,
                     "contractUntil": "2022-06-30",
                     "dateOfBirth": "1993-12-31",
                     "jerseyNumber": 9,
